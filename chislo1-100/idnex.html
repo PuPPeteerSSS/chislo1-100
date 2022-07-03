@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function searchNumber(min, max) {
+            let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+ 
+            let input, number;
+            while (true) {
+                input = prompt(`Введите целое число от ${min} до ${max} включительно:`);
+                if ((number = +input) !== parseInt(input))
+                    alert("Введите число!");
+                else {
+                    if (number < randomNumber) {
+                        alert(`Загаданное число больше`);
+                    }
+                    else if (number > randomNumber) {
+                        alert(`Загаданное число меньше`);
+                    }
+                    else {
+                        alert(`Поздравляю, Вы угадали!!!`);
+                        break;
+                    }
+                }
+            }
+        }
+ 
+
+
+
+        let input1 = 1;
+        let input2 = 100;
+        let min, max; 
+        if ((min = +input1) !== parseInt(input1) || (max = +input2) !== parseInt(input2)) {
+            alert("Диапазон ограничивается двумя целыми числами!");
+        }
+        else do {
+            searchNumber(min, max);
+        } while (confirm(`Продолжить игру?`));
+    </script>
+</body>
+</html>
